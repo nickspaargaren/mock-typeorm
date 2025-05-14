@@ -19,20 +19,22 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: "package.json"
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Cache node modules
         uses: actions/cache@v4
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-node-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Run Lint
-        run: npm run lint
+        run: pnpm run lint
 
       - name: Run Tests
-        run: npm run test
+        run: pnpm run test

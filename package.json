@@ -21,8 +21,8 @@
   },
   "scripts": {
     "build:types": "tsc -p tsconfig.package.json --emitDeclarationOnly",
-    "build": "npm run lint && rimraf ./dist && npm run build:types && rollup -c && rimraf ./dist/types",
-    "prepublishOnly": "npm run build",
+    "build": "pnpm run lint && rimraf ./dist && pnpm run build:types && rollup -c && rimraf ./dist/types",
+    "prepublishOnly": "pnpm run build",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage.enabled=true",
