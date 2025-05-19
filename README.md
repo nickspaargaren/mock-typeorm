@@ -17,3 +17,23 @@ Note that Sinon is added as a peer dependency, so you need to install it as well
 ## Documentation
 
 You can find the MockTypeORM documentation [on the website](https://mock-typeorm-docs.vercel.app).
+
+## Development
+
+To install the dependencies, run the following command:
+
+```bash
+pnpm install
+```
+
+To run the linting, run the following command:
+
+```bash
+pnpm run lint
+```
+
+To run the tests, run the following command:
+
+```bash
+pnpm run test
+```
